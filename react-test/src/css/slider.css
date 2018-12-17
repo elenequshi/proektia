@@ -1,0 +1,28 @@
+/* start-slider */
+.slider {
+  width:100%;
+  height:550px;
+  }
+  
+  .watches {
+  height:400px;
+  padding: 4em 0px 4em 0px;
+  }
+  .wrapper {
+  justify-content: space-around;
+    /* padding-right: 100px; */
+    /* padding-left: 100px; */
+  margin-right: auto;
+  margin-left: auto;
+  height:250px;
+  display: flex;
+  width:90%;
+  }
+  
+  .watch {
+  width:350px;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  }
+  /* end-slider */

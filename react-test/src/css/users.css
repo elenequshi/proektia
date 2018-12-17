@@ -1,0 +1,27 @@
+/* start- back-end:  admin => users  */
+
+
+.users {
+    margin:30px auto;
+    border-bottom: 1px solid #DEDEDE;
+    padding:8px 8px;
+    height: 50px;
+    width:90%;
+    display: flex;
+    justify-content:space-around;
+    color:#333;
+  }
+  
+  .users:hover {
+      background-color:#73B6E1;
+      color:white;
+      transition: color .3s ease-in;
+  }
+  .username:hover {
+  cursor: pointer;
+  color:#333;
+  }
+  
+  
+  
+  /* end- back-end:  admin => users  */

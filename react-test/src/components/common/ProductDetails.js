@@ -1,5 +1,6 @@
-import React from 'react'
-import axios from 'axios'
+import React from 'react';
+import axios from 'axios';
+import '../../css/details.css'
 
 
 class ProductDetails  extends React.Component {
@@ -52,4 +53,4 @@ class ProductDetails  extends React.Component {
     }
 }
 
-export default ProductDetails
+export default ProductDetails;

@@ -12,18 +12,20 @@ import Information from './components/Information';
 import Footer from './components/Footer';
 import Products from './components/Products'
 import ProductDetails from './components/common/ProductDetails';
-import Profile from './components/Profile'
-import Login from './components/Login'
-import CartProducts from './components/CartProducts'
-import BoughtProducts from './components/BoughtProducts'
-import Admin from './components/Admin'
-import Users from './components/Users'
-import UserCart from './components/UserCart'
-import UserPurchases from'./components/UserPurchases'
-import UserMessages from './components/UserMessages'
-import EditUserName from './components/EditUserName'
-import ProductForm from './components/ProductForm'
-import Contact from './components/Contact'
+import Profile from './components/Profile';
+import Login from './components/Login';
+import CartProducts from './components/CartProducts';
+import BoughtProducts from './components/BoughtProducts';
+import Admin from './components/Admin';
+import Users from './components/Users';
+import UserCart from './components/UserCart';
+import UserPurchases from'./components/UserPurchases';
+import UserMessages from './components/UserMessages';
+import EditUserName from './components/EditUserName';
+import ProductForm from './components/ProductForm';
+import Contact from './components/Contact';
+import 'antd/dist/antd.css';
+
 
 const Main = () => {
   return (
@@ -103,11 +105,12 @@ class App extends Component {
          /> 
          <Route
          path="/login"
-         component={ () =><Login 
+         component={ (props) =><Login 
          showLogin={ (change) => { this.setState({showLogin:change}) }
         } 
         showAdmin={ (change) => { this.setState({admin:change}) }
       } 
+      {...props}
          />}
          />
          <ProtectedRoute 
@@ -173,9 +176,6 @@ class App extends Component {
          path="/profile/purchases" 
          component={BoughtProducts}
          />
-
-         {!this.state.showLogin &&  (<Redirect to={`/profile`} />) }
-         {this.state.admin &&  (<Redirect to={`/admin`} />) }
         <Information/>
        <Footer/>
       </div>
@@ -185,6 +185,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-

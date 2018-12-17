@@ -42,4 +42,4 @@ class BoughtProducts extends React.Component {
 
 }
 
-export default BoughtProducts
+export default BoughtProducts;

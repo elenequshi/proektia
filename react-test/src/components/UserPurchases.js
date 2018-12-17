@@ -40,4 +40,4 @@ class UserPurchases extends React.Component {
 }
 
 
-export default UserPurchases
+export default UserPurchases;

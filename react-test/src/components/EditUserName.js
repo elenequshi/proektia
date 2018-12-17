@@ -52,4 +52,4 @@ editUser = (newUser) => {
         }
     }
 
-export default EditUserName
+export default EditUserName;

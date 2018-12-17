@@ -58,6 +58,7 @@ class RegistrationForm extends Form {
         // saveMovie(this.state.data)
         const data = this.state.data
         this.props.register(data)
+        console.log(this.state.data)
 
         this.props.history.replace("/")
         // <Redirect to={`/`} />
@@ -67,11 +68,11 @@ class RegistrationForm extends Form {
     render() {
         return (
             <div>
-              <h1>Registration</h1>
+              <h1>Movie Form</h1>
               <form onSubmit={this.handleSubmit}>
               {this.renderInput("username", "Username")}
               {this.renderInput("email", "Email")}
-              {this.renderInput("password", "Password", "password")}
+              {this.renderInput("password", "Password")}
               {this.renderInput("age", "Age")}
               {this.renderInput("birthday", "Birthday")}
               {this.renderInput("balance", "Balance")}
@@ -83,4 +84,5 @@ class RegistrationForm extends Form {
         }
     }
 
-export default RegistrationForm
+export default RegistrationForm;
+

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import Form from './common/form';
 import Joi from 'joi-browser'
-
+import '../css/contact.css'
 
 class Contact extends Form {
 	state = {};

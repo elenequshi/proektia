@@ -1,5 +1,3 @@
-
-
 import { BrowserRouter,browserHistory, Router, Link, Route, Redirect } from 'react-router-dom';
 import axios from 'axios'
 import React from 'react'
@@ -46,8 +44,10 @@ class Login extends Form {
                 const username = localStorage.getItem('authorized')
                 if(username === 'admin'){
                     this.props.showAdmin(true)
+                    this.props.history.replace("/admin")
                 }else{
                     this.props.showLogin(false)
+                    this.props.history.replace("/profile")
                 }
             }
             else {
@@ -89,4 +89,4 @@ class Login extends Form {
         }
     }
 
-export default Login
+export default Login;

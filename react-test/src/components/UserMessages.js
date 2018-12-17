@@ -37,4 +37,4 @@ class UserMessages extends React.Component {
 }
 
 
-export default UserMessages
+export default UserMessages;

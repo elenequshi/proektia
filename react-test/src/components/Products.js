@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import Product from './common/Product'
 import axios from 'axios'
 import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
-import ProductDetails from './common/ProductDetails'
+import ProductDetails from './common/ProductDetails';
+import '../css/products.css';
 
 class Products extends Component {
     state={
@@ -52,4 +53,4 @@ class Products extends Component {
     }
 }
 
-export default Products
+export default Products;

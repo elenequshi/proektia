@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/information.css';
 
 const Information = (props) => {
     return (
@@ -28,11 +29,11 @@ const Information = (props) => {
                     <p> My Addresses </p>
                 </div>
                 <div className="info">
-                <h3> Store Information </h3>
-                <p> Techhub Team </p>
-                <p> Tbilisi,Georgia </p>
-                <p> +995123456 </p>
-                <p> BestTeam@gmail.com </p>  
+                    <h3> Store Information </h3>
+                    <p> Techhub Team </p>
+                    <p> Tbilisi,Georgia </p>
+                    <p> +995123456 </p>
+                    <p> BestTeam@gmail.com </p>
                 </div>
 
             </div>

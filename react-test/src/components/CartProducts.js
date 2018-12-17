@@ -1,8 +1,8 @@
-import React from 'react'
-import { Link} from 'react-router-dom';
-import CartProduct from './common/CartProduct'
-import axios from 'axios' 
-
+import React from 'react';
+import {Link} from 'react-router-dom';
+import CartProduct from './common/CartProduct';
+import axios from 'axios' ;
+import '../css/cartProducts.css'
 class CartProducts  extends React.Component {
         state = {
             data: localStorage.getItem('authorized'),
@@ -113,4 +113,4 @@ class CartProducts  extends React.Component {
 
       
 }
-export default CartProducts
+export default CartProducts;

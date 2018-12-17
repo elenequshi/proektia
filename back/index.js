@@ -169,7 +169,7 @@ app.post('/admin/edit/username', (req,res) =>{
 
 app.post('/admin/addproduct', (req,res) =>{
     const product = req.body
-    product.id = Products.length + 1
+    product.id = Date.now()
     Products.push(product)
     res.send(product)
 })
