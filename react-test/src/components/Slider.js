@@ -48,6 +48,8 @@ class Slider extends Component {
                         <img src={"http://www.androidguys.com/wp-content/uploads/2016/07/ulysse-nardin-luxury-watch.jpg"} className="watch" />
 
                     </div>
+                    
+                    
                 </div>
 
             </div>

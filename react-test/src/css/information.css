@@ -1,18 +1,15 @@
 /* start-information */
 .information {
   font-size: 14px;
-  /* line-height: 1.42857143; */
   color: #333;
   height:220px;
+  margin-bottom:40px;
   }
   
   .info-box {
   border-bottom: 1px solid rgb(197, 193, 193);
-  justify-content: space-around;
-    /* padding-right: 15px; */
-    /* padding-left: 15px; */
-  margin-right: auto;
-  margin-left: auto;
+  justify-content: space-between;
+  margin: auto;
   height:220px;
   display: flex;
   width: 90%;
@@ -20,7 +17,7 @@
   
   .info {
   margin-top:30px;
-  width:200px;  
+  width:180px;  
   }
 
   .info h3{

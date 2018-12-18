@@ -103,7 +103,7 @@ class Navigation extends Component {
                         
                             <form onSubmit={this.handleInputChange}>
 
-                                <input type="text" placeholder="search" />
+                                <input type="text" placeholder="search" className="searchInput" />
                                 <input type="submit" className="searchBtn" value="Search" />
                                 {/* <Suggestions items={this.state.items} /> */}
                                 {this.suggestions()}

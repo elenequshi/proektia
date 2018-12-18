@@ -10,7 +10,7 @@ const Footer = () => {
                     <input type="submit" value="Subscribe" className="subscribe" />
                 </div>
                 <div className="footer-right">
-                    <p> © 2018 Luxury Watches. All Rights Reserved | Design by Techhub Team  </p>
+                    <p> © 2018 Luxury Watches. All Rights Reserved | Design by Techub Team  </p>
                 </div>
 
             </div>

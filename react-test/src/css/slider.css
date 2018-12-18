@@ -5,24 +5,36 @@
   }
   
   .watches {
-  height:400px;
-  padding: 4em 0px 4em 0px;
+  height:350px;
+  /* padding: 4em 0px 4em 0px; */
+  margin-top:80px;
   }
   .wrapper {
-  justify-content: space-around;
-    /* padding-right: 100px; */
-    /* padding-left: 100px; */
-  margin-right: auto;
-  margin-left: auto;
+  justify-content: space-between;
+  margin: auto;
   height:250px;
   display: flex;
   width:90%;
   }
   
   .watch {
-  width:350px;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  width:29%;
+	
   }
+
+  .watch:hover {
+    border-radius:40px;
+    -webkit-transform: scale(1.06);
+    -webkit-transition-timing-function: ease-in-out;
+    -webkit-transition-duration: 600ms;
+    -moz-transform: scale(1.06);
+    -moz-transition-timing-function: ease-in-out;
+    -moz-transition-duration: 600ms;
+    transform: rotate(360deg);
+    cursor:pointer;
+
+  }
+
+  
+  
   /* end-slider */
