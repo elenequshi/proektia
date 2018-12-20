@@ -1,18 +1,18 @@
-import React from 'react'
-import { Link} from 'react-router-dom';
-import  '../css/account.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../css/account.css';
 const Account = (props) => {
-     return(
+    return (
         <div className="user">
             <h1 className="user-title">Account</h1>
             <div className="user-nav">
-                <h3 className="user-sub-title"> <i className="fas fa-user"></i> Welcome, {props.username}!</h3>
-                <h3>Balance <span> ${props.balance}</span></h3>
-                <Link to={"/profile/cart"} className="user-nav-link"><h3> <i className="fas fa-cart-plus"> </i> In Cart</h3></Link>
-                <Link to={"/profile/purchases"} className="user-nav-link"><h3> <i className="fas fa-cart-arrow-down"> </i> Purchases </h3></Link>
-                <Link to={"/profile/contact"} className="user-nav-link"><h3>Contact Us</h3></Link>
+                <h4 className="welcome"> <i className="fas fa-user"></i> Welcome, {props.username}!</h4>
+                <h4>Balance <span> ${props.balance}</span></h4>
+                <Link to={"/profile/cart"} ><h4 className="user-nav-link"> <i className="fas fa-cart-plus"> </i> In Cart ({props.cartLength})</h4></Link>
+                <Link to={"/profile/purchases"} ><h4 className="user-nav-link"> <i className="fas fa-cart-arrow-down"> </i> Purchases ({props.purchases}) </h4></Link>
+                <Link to={"/profile/contact"} ><h4 className="user-nav-link"> <i className="far fa-envelope"> </i> Contact Us</h4></Link>
             </div>
         </div>
-     )
+    )
 }
 export default Account;

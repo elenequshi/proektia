@@ -8,7 +8,7 @@ const Header = (props) => {
             <div className="top-header">
             </div>
             <div className="logo">
-                <a href="index.html"><h1>Luxury Watches</h1></a>
+                <a href="/"><h1>Luxury Watches</h1></a>
             </div>
 
         </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../css/navigation.css';
+import { Input } from '../../node_modules/antd';
 
 const URL = 'http://localhost:5000/products';
 
@@ -9,56 +10,34 @@ const URL = 'http://localhost:5000/products';
 
 class Navigation extends Component {
     state = {
-        name: '',
-        items: [],
-        itemsToSearch: []
+       products:[
+
+       ]
     }
-    componentDidMount() {
-        axios.get(URL)
-            .then(data => {
-                this.setState({ items: data.data });
-            })
-    }
-    getInfo = () => {
-        const { itemsToSearch, name, items } = this.state
-
-        let matches = items.filter(n => n.name.toLowerCase().includes(name))
-        this.setState({ itemsToSearch: matches })
-
-    }
-
-    suggestions = () => {
-        const options = this.state.itemsToSearch.map(item => (
-            <li key={item.id}>
-                {item.name}
-            </li>
-        ))
-        return <ul>{options}</ul>
-    }
-
-
-
-    handleInputChange = (e) => {
-        e.preventDefault()
-        this.setState({
-            name: this.search.value
-        }, () => {
-            if (this.state.name && this.state.name.length > 0 ) {
-                this.getInfo();
-
-            }
-            else if (!this.state.name) {
-            }
-
-        })
-
-    }
-
+   
+    
     logOut = () => {
         this.props.showLogin(true);
         this.props.showAdmin(false);
         localStorage.removeItem('authorized');
     }
+    change = (e) =>{
+        this.state.products.forEach(el=>{
+            if(e.target.value === el.name){
+                this.props.history.push('/products/' + el.id)
+                e.target.value=''
+            }
+        })
+    }
+    getProducts = () => {
+    axios.get('http://localhost:5000/products')
+    .then(response => {
+       this.setState({products:response.data})
+    })
+  }
+  componentDidMount() {
+    this.getProducts()
+}
     render() {
         return (
 
@@ -108,17 +87,18 @@ class Navigation extends Component {
 
                     <div className="header-right">
                         <div className="search-bar">
-
-                            <form onChange={this.handleInputChange}>
-
-                                <input type="text"
-                                    placeholder="search"
-                                    className="searchInput"
-                                    ref={input => this.search = input} />
-                                <button type="submit" className="searchBtn" value="Search">Search </button>
-                                {this.suggestions()}
-
-                            </form>
+                      <form onSubmit={(e) => e.preventDefault()}>
+                      <Input
+                      onChange={this.change}
+                      list="products"
+                      type="text"
+                      placeholder="search"/>
+                      <datalist id="products">
+                      {this.state.products.map(el =>{
+                          return <option key={el.id} value={el.name}/>
+                      })}
+                      </datalist>
+                      </form>
                         </div>
 
 

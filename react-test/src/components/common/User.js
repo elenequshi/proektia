@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter,browserHistory, Router, Link, Route, Redirect } from 'react-router-dom';
-
+import '../../css/users.css';
 class User extends React.Component {
   
     render() {

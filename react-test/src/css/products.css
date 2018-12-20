@@ -5,17 +5,21 @@
     flex-flow: row wrap;
     text-align: center;
     height: 100%;
-    width: 90%;
-    margin: 0px auto 40px;
-    justify-content: space-between;
+    max-width: 90%;
+    margin:auto ;
+    /* margin-left: 10%; */
+    /* justify-content: flex-start; */
   }
   
   .product-item {
     padding: 1em 0px 2.7em 0px;
     border:1px solid #ECEAEA;
-    width: 22%;
+    width: 21%;
     position:relative;
+  
     margin-bottom:15px;
+    margin-left:3%;
+
   }
 
   .product-item:hover {
@@ -63,7 +67,7 @@
       text-transform: uppercase;
   }
   
-  .edit, .add{
+  .btn-custom{
     text-transform: uppercase;
     padding: 5px 15px;
     background: #000;
@@ -74,7 +78,7 @@
     bottom:10px;
     right:0;
   }
-  .edit:hover, .add:hover{
+  .btn-custom:hover{
     background: lightseagreen;
     cursor: pointer;
     text-decoration: none;

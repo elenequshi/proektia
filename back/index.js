@@ -63,6 +63,13 @@ app.post('/cart', (req,res) =>{
     const user = Users.find(el => el.username === data)
     res.send(user.cartProducts)
 })
+
+app.post('/cartlength', (req,res) =>{
+    const data = req.body.data
+    const user = Users.find(el => el.username === data)
+    res.send((user.cartProducts.length).toString())
+})
+
 app.post('/balance', (req,res) =>{
     const data = req.body.data
     const user = Users.find(el => el.username === data)
@@ -74,7 +81,6 @@ app.post('/message', (req,res) =>{
     const index = Users.indexOf(user)
     user.messages.push(req.body.message)
     Users.splice(index,1 ,user)
-    console.log(Users)
 
 })
 app.post('/purchases', (req,res) =>{
@@ -82,6 +88,13 @@ app.post('/purchases', (req,res) =>{
     const user = Users.find(el => el.username === data)
     res.send(user.boughtProducts)
 })
+
+app.post('/purchaseslength', (req,res) =>{
+    const data = req.body.data
+    const user = Users.find(el => el.username === data)
+    res.send((user.boughtProducts.length).toString())
+})
+
 app.post('/purchase', (req,res) =>{
     const data = req.body.data
     const user = Users.find(el => el.username === data)

@@ -8,6 +8,7 @@ class EditUserName extends Form {
         data: {
             username: "",
         },
+        users:[],
         errors: {}
     }
 
@@ -18,6 +19,12 @@ class EditUserName extends Form {
            .label('Username'),
      
     }   
+      getUsers = () => {
+    axios.get('http://localhost:5000/users')
+    .then(response => {
+       this.setState({users:response.data})
+  })
+}
  
 editUser = (newUser) => {
     axios.post('http://localhost:5000/admin/edit/username', newUser)
@@ -25,7 +32,7 @@ editUser = (newUser) => {
     
 
     componentDidMount() {
-
+         this.getUsers()
          const username = this.props.match.params.username
         this.setState({data: {username}})
     }

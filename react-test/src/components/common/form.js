@@ -13,6 +13,9 @@ class Form extends Component {
         const {error}  = Joi.validate(this.state.data,this.schema, {
             abortEarly: false
          });
+        if(this.state.errors.username || this.state.errors.name){
+            return "error"
+        }
       if (!error) return null;
          const errors = {}
          for (let item of error.details){
@@ -38,7 +41,22 @@ class Form extends Component {
         const errorMessage = this.validateProperty(e.currentTarget)
         if (errorMessage) errors[e.currentTarget.name] = errorMessage
         else delete errors[e.currentTarget.name];
-
+        if(this.state.users){
+            this.state.users.forEach(el =>{
+                if(el.username === e.currentTarget.value){
+                    errors['username'] = "User with the same username already exists"
+                    this.setState({errors})
+                }
+            })
+        }
+        if(this.state.products){
+            this.state.products.forEach(el =>{
+                if(el.name === e.currentTarget.value){
+                    errors['name'] = "A product with the same name already exists"
+                    this.setState({errors})
+                }
+            })
+        }
         const data = {...this.state.data}
         data[e.currentTarget.name] = e.currentTarget.value;
         this.setState({data, errors})
@@ -47,13 +65,8 @@ class Form extends Component {
         return (
             <button
             disabled={this.validate()} 
-             className="btn btn-primary">{label}</button>
-        //      <Link
-        // disabled={this.validate()}
-        // to="/"
-        // className="btn btn-primary"
-        // style={{marginBottom:20}}
-        // >{label}</Link>
+             className="btn">{label}</button>
+       
         )
     }
 
@@ -70,6 +83,21 @@ class Form extends Component {
             />
         )
        
+    }
+
+    renderTextArea(name, label, type){
+        return (
+            <div>
+              <label htmlFor={name}>{label}</label>
+              <textarea
+              onChange={this.handleChange}
+              name={name}
+              rows="4"
+              cols="50"
+              >
+              </textarea>
+            </div>
+        )
     }
    
 }

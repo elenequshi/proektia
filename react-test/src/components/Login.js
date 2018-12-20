@@ -3,6 +3,7 @@ import axios from 'axios'
 import React from 'react'
 import Joi from "joi-browser";
 import Form from "./common/form";
+import "../css/form.css"
 
 class Login extends Form {
     state = {
@@ -23,18 +24,7 @@ class Login extends Form {
            .label("Password"),
     }
 
-    componentDidMount() {
-        // const genres= getGenres();
-        // this.setState({genres});
-
-        // const movieId = this.props.match.params.id
-        // if (movieId === "new") return;
-
-        // const movie = getMovie(movieId)
-        // if (!movie) return this.props.history.replace("/not-found")
-
-        // this.setState({data: this.mapToViewModel(movie)})
-    }
+    
     login = (user) => {
         axios.post('http://localhost:5000/login', user)
         .then(response => response.data)
@@ -76,9 +66,9 @@ class Login extends Form {
 
     render() {
         return (
-            <div>
-              <h1>Login</h1>
-              <form onSubmit={this.handleSubmit}>
+            <div className="container-div">
+              <h1 className="main-title">Login</h1>
+              <form className="main-form" onSubmit={this.handleSubmit}>
               {this.renderInput("username", "Username")}
               {this.renderInput("password", "Password", "password")}
               {this.renderButton("Login")}

@@ -33,6 +33,7 @@ class Products extends Component {
             {
                 this.state.products.map( (el) =>(
                 <Product
+                addToCart={this.props.addToCart}
                 remove={this.removeProduct}
                 key={el.id}
                 id={el.id}
@@ -45,7 +46,7 @@ class Products extends Component {
             {localStorage.getItem('authorized') =='admin' && 
         <div className="product-item">
         <i className="far fa-image fa-7x"></i>
-        <Link to="/admin/products/add" className="add">Add</Link>
+        <Link to="/admin/products/add" className="btn-custom">Add</Link>
       </div>  
         }
               </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import CartProduct from './common/CartProduct'
-
+import '../css/cartProducts.css'
 class BoughtProducts extends React.Component {
     state ={
         purchases:[],
@@ -23,6 +23,13 @@ class BoughtProducts extends React.Component {
     render(){
         return (
             <div>
+                <h1 className="title">Purchases</h1>
+                <ul className="cart-headings">
+                    <li>Item</li>
+                    <li>Product Name</li>
+                    <li>Unit Price</li>
+                    <li>Delivery Details</li>
+                </ul>
 
           {this.state.purchases.map( (el,index)=> (
                 <CartProduct

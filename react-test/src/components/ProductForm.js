@@ -2,7 +2,7 @@ import React from 'react'
 import Joi from "joi-browser";
 import Form from "./common/form";
 import axios from 'axios';
-import '../css/productForm.css'
+import '../css/form.css'
 import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
 
 class ProductForm extends Form {
@@ -13,6 +13,7 @@ class ProductForm extends Form {
             desc:"",
             price:"",
         },
+        products:[],
         errors: {}
     }
 
@@ -30,6 +31,14 @@ class ProductForm extends Form {
         price: Joi.number()
            .required()
            .label("Price")
+    }
+
+    getProducts(){
+
+        axios.get('http://localhost:5000/products')
+         .then(response => {
+            this.setState({products:response.data})
+        })
     }
     getProduct(){
 
@@ -49,6 +58,7 @@ class ProductForm extends Form {
     }
 
     componentDidMount() {
+        this.getProducts()
         if(this.props.match.params.id){
             this.getProduct()
         }
@@ -75,9 +85,9 @@ class ProductForm extends Form {
 
     render() {
         return (
-            <div className="product-form">
-              <h1>Product Form</h1>
-              <form onSubmit={this.handleSubmit}>
+            <div className="container-div">
+              <h1 className="main-title">Product Form</h1>
+              <form className="main-form" onSubmit={this.handleSubmit}>
               {this.renderInput("name", "Name")}
               {this.renderInput("url", "Url")}
               {this.renderInput("desc", "Description")}

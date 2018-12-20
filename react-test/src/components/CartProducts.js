@@ -66,23 +66,24 @@ class CartProducts  extends React.Component {
             <div className="cart">
                 <h1 className="title">Checkout</h1>
                 <h3 className="sub-title">My Shopping Cart ({cart.length})</h3>
-                <div className="cart-header">
+                
                     <ul className="cart-headings">
                         <li>Item</li>
                         <li>Product Name</li>
                         <li>Unit Price</li>
                         <li>Delivery Details</li>
                     </ul>
-                </div>
+                
                 {this.state.purchased && 
                 <h1
                 style={
                     {
-                        color:"green"
+                        color:"green",
+                        textAlign:"center"
                     }
                 }
                 >
-                    Purchase has been made</h1>}
+                    <i className="fas fa-check"></i> Purchase has been made</h1>}
                 {cart.map( (el,index)=> (
                     <CartProduct
                     remove={this.removeCartProduct}
@@ -97,10 +98,11 @@ class CartProducts  extends React.Component {
                 {this.state.error && 
                 <h1
                 style={{
-                    color:"red"
+                    color:"red",
+                    textAlign:"center"
                 }}
                 >
-                    Not Enough Money</h1>
+                    <i className="fas fa-ban"></i> Not Enough Money</h1>
                 }
                 <button 
                 onClick={this.enable}

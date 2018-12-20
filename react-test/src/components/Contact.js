@@ -3,6 +3,7 @@ import axios from 'axios'
 import Form from './common/form';
 import Joi from 'joi-browser'
 import '../css/contact.css'
+import '../css/form.css';
 
 class Contact extends Form {
 	state = {};
@@ -79,7 +80,7 @@ class Contact extends Form {
                     {this.renderInput("email", "Email")}
 					</div>
                     <div className="right--container__item2">
-                    {this.renderInput("message", "Message")}
+                    {this.renderTextArea("message", "Message")}
 					</div>
                     <div className="right--container__item3">
                     {this.renderButton("Submit")}
