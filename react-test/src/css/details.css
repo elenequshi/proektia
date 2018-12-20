@@ -6,6 +6,7 @@
   margin: auto;
   padding: 40px 0;
 }
+
 .details-image{
   margin-top: 15px;
   height: 400px;
@@ -15,12 +16,14 @@
 .details-text{
   grid-column:2/3
 }
+
 .details-name{
   font-size: 40px;
   color: #000;
   margin: 30px 0 0 0;
   font-family: 'BreeSerif-Regular';
 }
+
 .details-price{
   font-size: 30px;
   color: #000;
@@ -37,10 +40,12 @@
   border:none;
   transition: all .1s linear;
 }
+
 .details-button:hover{
   background: lightseagreen;
   cursor: pointer;
 }
+
 .details-button:active{
   transform: translateY(3px);
 }

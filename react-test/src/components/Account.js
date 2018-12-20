@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/account.css';
+
 const Account = (props) => {
+
     return (
         <div className="user">
             <h1 className="user-title">Account</h1>

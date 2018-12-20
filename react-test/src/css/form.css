@@ -1,24 +1,26 @@
 .container-div{
-    margin: 50px auto;
+  margin: 50px auto;
   }
-  .main-form {
-    width: 40%;
-    margin: auto;
+
+.main-form {
+  width: 40%;
+  margin: auto;
   }
-  .main-title{
-    text-align: center;
-    font-family: 'Lora-Regular';
+
+.main-title{
+  text-align: center;
+  font-family: 'Lora-Regular';
   }
   
-  .btn{
-    text-transform: uppercase;
-    background: #000; 
-    color: #fff;
-  
+.btn{
+  text-transform: uppercase;
+  background: #000; 
+  color: #fff;
   }
-  .btn:hover{
-    background: lightseagreen;
-    cursor: pointer;
-    text-decoration: none;
-    color:#fff;
+
+.btn:hover{
+  background: lightseagreen;
+  cursor: pointer;
+  text-decoration: none;
+  color:#fff;
   }

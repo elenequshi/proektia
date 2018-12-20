@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/information.css';
 
 const Information = (props) => {
+
     return (
         <div className="information">
             <div className="info-box">

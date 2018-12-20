@@ -1,5 +1,5 @@
 import React from 'react';
-import User from './common/User'
+import User from './common/User';
 import axios from 'axios';
 
 

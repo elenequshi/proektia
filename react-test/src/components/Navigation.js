@@ -10,34 +10,34 @@ const URL = 'http://localhost:5000/products';
 
 class Navigation extends Component {
     state = {
-       products:[
+        products: [
 
-       ]
+        ]
     }
-   
-    
+
+
     logOut = () => {
         this.props.showLogin(true);
         this.props.showAdmin(false);
         localStorage.removeItem('authorized');
     }
-    change = (e) =>{
-        this.state.products.forEach(el=>{
-            if(e.target.value === el.name){
+    change = (e) => {
+        this.state.products.forEach(el => {
+            if (e.target.value === el.name) {
                 this.props.history.push('/products/' + el.id)
-                e.target.value=''
+                e.target.value = ''
             }
         })
     }
     getProducts = () => {
-    axios.get('http://localhost:5000/products')
-    .then(response => {
-       this.setState({products:response.data})
-    })
-  }
-  componentDidMount() {
-    this.getProducts()
-}
+        axios.get('http://localhost:5000/products')
+            .then(response => {
+                this.setState({ products: response.data })
+            })
+    }
+    componentDidMount() {
+        this.getProducts()
+    }
     render() {
         return (
 
@@ -87,18 +87,18 @@ class Navigation extends Component {
 
                     <div className="header-right">
                         <div className="search-bar">
-                      <form onSubmit={(e) => e.preventDefault()}>
-                      <Input
-                      onChange={this.change}
-                      list="products"
-                      type="text"
-                      placeholder="search"/>
-                      <datalist id="products">
-                      {this.state.products.map(el =>{
-                          return <option key={el.id} value={el.name}/>
-                      })}
-                      </datalist>
-                      </form>
+                            <form onSubmit={(e) => e.preventDefault()}>
+                                <Input
+                                    onChange={this.change}
+                                    list="products"
+                                    type="text"
+                                    placeholder="search" />
+                                <datalist id="products">
+                                    {this.state.products.map(el => {
+                                        return <option key={el.id} value={el.name} />
+                                    })}
+                                </datalist>
+                            </form>
                         </div>
 
 

@@ -3,6 +3,7 @@ import { Carousel } from 'antd';
 import '../css/slider.css';
 
 class Slider extends Component {
+
     render() {
         return (
             <div>
@@ -12,7 +13,7 @@ class Slider extends Component {
                         <img src={"http://pristinewatcheslondon.co.uk/img/omegabanner.jpg"} className="slider" />
                     </div>
 
-                     <div>
+                    <div>
                         <img src={"https://images.askmen.com/1080x540/2017/02/13-043441-how_your_watch_reflects_your_character.jpg"} className="slider" />
                     </div>
 
@@ -28,17 +29,6 @@ class Slider extends Component {
                         <img src={"https://moneyinc.com/wp-content/uploads/2016/04/Breitling-IWC_opener_LG.jpg"} className="slider" />
                     </div>
 
-                    
-                   
-                    
-
-
-
-                    {/* <img src={"https://i.ytimg.com/vi/_MmiJSMmQ10/maxresdefault.jpg"} className="slider" /> */}
-
-
-
-
                 </Carousel>
 
                 <div className="watches">
@@ -48,9 +38,8 @@ class Slider extends Component {
                         <img src={"http://www.androidguys.com/wp-content/uploads/2016/07/ulysse-nardin-luxury-watch.jpg"} className="watch" />
 
                     </div>
-                    
-                    
                 </div>
+
 
             </div>
         );
