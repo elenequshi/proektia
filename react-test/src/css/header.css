@@ -26,3 +26,18 @@
   text-decoration:none;
   }
   /* end-logo */
+
+
+  /* This is responsive for mobile */
+@media all and (max-width: 519px) {
+
+  .top-header{
+height:45px;
+  }
+
+  .logo a h1 {
+    font-size: 25px;
+  }
+
+}
+

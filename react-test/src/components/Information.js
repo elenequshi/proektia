@@ -8,9 +8,9 @@ const Information = (props) => {
                 <div className="info">
                     <h3> Follow Us </h3>
                     <ul>
-                        <li> <a href="facebook.com" > Facebook </a></li>
-                        <li> <a href="twitter.com" > Twitter </a></li>
-                        <li> <a href="google.com" > Google+ </a></li>
+                        <li> <i className="fab fa-facebook-square"></i>  <a href="facebook.com" > Facebook </a></li>
+                        <li> <i className="fab fa-twitter-square" ></i> <a href="twitter.com" > Twitter </a></li>
+                        <li> <i className="fab fa-google-plus-square"></i> <a href="google.com" > Google+ </a></li>
                     </ul>
                 </div>
                 <div className="info">

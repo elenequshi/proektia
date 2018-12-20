@@ -10,18 +10,25 @@ const URL = 'http://localhost:5000/products';
 class Navigation extends Component {
     state = {
         name: '',
-        items: []
+        items: [],
+        itemsToSearch: []
     }
-
-    getInfo = () => {
+    componentDidMount() {
         axios.get(URL)
             .then(data => {
-                this.setState({ items: data.data })
+                this.setState({ items: data.data });
             })
+    }
+    getInfo = () => {
+        const { itemsToSearch, name, items } = this.state
+
+        let matches = items.filter(n => n.name.toLowerCase().includes(name))
+        this.setState({ itemsToSearch: matches })
+
     }
 
     suggestions = () => {
-        const options = this.state.items.map(item => (
+        const options = this.state.itemsToSearch.map(item => (
             <li key={item.id}>
                 {item.name}
             </li>
@@ -31,12 +38,13 @@ class Navigation extends Component {
 
 
 
-    handleInputChange = () => {
+    handleInputChange = (e) => {
+        e.preventDefault()
         this.setState({
             name: this.search.value
         }, () => {
-            if (this.state.name && this.state.name.length > 1) {
-                this.getInfo()
+            if (this.state.name && this.state.name.length > 0 ) {
+                this.getInfo();
 
             }
             else if (!this.state.name) {
@@ -47,9 +55,9 @@ class Navigation extends Component {
     }
 
     logOut = () => {
-        this.props.showLogin(true)
-        this.props.showAdmin(false)
-        localStorage.removeItem('authorized')
+        this.props.showLogin(true);
+        this.props.showAdmin(false);
+        localStorage.removeItem('authorized');
     }
     render() {
         return (
@@ -100,12 +108,14 @@ class Navigation extends Component {
 
                     <div className="header-right">
                         <div className="search-bar">
-                        
-                            <form onSubmit={this.handleInputChange}>
 
-                                <input type="text" placeholder="search" className="searchInput" />
-                                <input type="submit" className="searchBtn" value="Search" />
-                                {/* <Suggestions items={this.state.items} /> */}
+                            <form onChange={this.handleInputChange}>
+
+                                <input type="text"
+                                    placeholder="search"
+                                    className="searchInput"
+                                    ref={input => this.search = input} />
+                                <button type="submit" className="searchBtn" value="Search">Search </button>
                                 {this.suggestions()}
 
                             </form>

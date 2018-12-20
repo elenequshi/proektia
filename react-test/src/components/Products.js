@@ -42,7 +42,7 @@ class Products extends Component {
                 />
             ))
             }
-            {localStorage.getItem('authorized') ==='admin' && 
+            {localStorage.getItem('authorized') =='admin' && 
         <div className="product-item">
         <i className="far fa-image fa-7x"></i>
         <Link to="/admin/products/add" className="add">Add</Link>
