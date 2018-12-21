@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import CartProduct from './common/CartProduct';
 
-class UserPurchases extends React.Component {
+class UserPurchases extends Component {
 
     state = {
         purchases: [
@@ -24,7 +24,7 @@ class UserPurchases extends React.Component {
     render() {
         return (
             <div>
-                {this.state.purchases.length == 0 && <h1>No Items To Be Displayed</h1>}
+                {this.state.purchases.length === 0 && <h1>No Items To Be Displayed</h1>}
                 {this.state.purchases.length !== 0 &&
                     this.state.purchases.map((el, index) => (
                         <CartProduct

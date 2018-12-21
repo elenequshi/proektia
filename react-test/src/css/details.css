@@ -1,21 +1,17 @@
 .details{
-  display:grid;
-  grid-template-columns: 400px auto;
-  grid-gap:10px;
+  display:flex;
   max-width: 90%;
   margin: auto;
   padding: 40px 0;
+
 }
 
 .details-image{
   margin-top: 15px;
   height: 400px;
-  grid-column:1/2;
+  width: 400px;
 }
 
-.details-text{
-  grid-column:2/3
-}
 
 .details-name{
   font-size: 40px;
@@ -48,4 +44,21 @@
 
 .details-button:active{
   transform: translateY(3px);
+}
+
+
+/* This is responsive for mobile */
+
+@media all and (max-width: 519px) {
+  .details-image {
+    height:200px;
+    width:200px;
+    margin:auto;
+  }
+  .details{
+   
+    flex-direction: column;
+  }
+  
+  
 }

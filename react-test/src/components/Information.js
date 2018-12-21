@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/information.css';
 
-const Information = (props) => {
+const Information = () => {
 
     return (
         <div className="information">
@@ -31,9 +31,9 @@ const Information = (props) => {
                 </div>
                 <div className="info">
                     <h3> Store Information </h3>
-                    <p> Techhub Team </p>
-                    <p> Tbilisi,Georgia </p>
-                    <p> +995123456 </p>
+                    <p> Techub Team </p>
+                    <p> Tbilisi, Georgia </p>
+                    <p> +995555123456 </p>
                     <p> BestTeam@gmail.com </p>
                 </div>
 

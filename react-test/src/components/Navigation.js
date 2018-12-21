@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../css/navigation.css';
-import { Input } from '../../node_modules/antd';
-
-const URL = 'http://localhost:5000/products';
 
 
 
@@ -21,22 +18,32 @@ class Navigation extends Component {
         this.props.showAdmin(false);
         localStorage.removeItem('authorized');
     }
-    change = (e) => {
-        this.state.products.forEach(el => {
-            if (e.target.value === el.name) {
-                this.props.history.push('/products/' + el.id)
-                e.target.value = ''
-            }
-        })
-    }
-    getProducts = () => {
-        axios.get('http://localhost:5000/products')
+    getSearch = (name) => {
+        axios.get('http://localhost:5000/search/' + name)
             .then(response => {
                 this.setState({ products: response.data })
             })
     }
-    componentDidMount() {
-        this.getProducts()
+    getProduct = (name) => {
+        axios.get('http://localhost:5000/search/product/' + name)
+            .then(response => {
+                if (response.data) {
+                    this.props.history.push('/')
+                    this.props.history.push('/products/' + response.data)
+                }
+
+            })
+    }
+    change = (e) => {
+        if (e.target.value !== '') {
+            this.getSearch(e.target.value)
+        }
+    }
+    onSubmit = (e) => {
+        e.preventDefault()
+        let name = e.target.children[0].value
+        this.getProduct(name)
+        e.target.children[0].value = ''
     }
     render() {
         return (
@@ -87,9 +94,10 @@ class Navigation extends Component {
 
                     <div className="header-right">
                         <div className="search-bar">
-                            <form onSubmit={(e) => e.preventDefault()}>
-                                <Input
+                            <form onSubmit={this.onSubmit}>
+                                <input className="searchInput"
                                     onChange={this.change}
+                                    name="search"
                                     list="products"
                                     type="text"
                                     placeholder="search" />
@@ -98,6 +106,7 @@ class Navigation extends Component {
                                         return <option key={el.id} value={el.name} />
                                     })}
                                 </datalist>
+                                <button className="searchBtn"> <i className="fas fa-search"></i>  </button>
                             </form>
                         </div>
 

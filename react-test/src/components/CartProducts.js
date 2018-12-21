@@ -1,10 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
 import CartProduct from './common/CartProduct';
 import axios from 'axios';
 import '../css/cartProducts.css';
 
-class CartProducts extends React.Component {
+class CartProducts extends Component {
 
     state = {
         data: localStorage.getItem('authorized'),
@@ -57,6 +56,12 @@ class CartProducts extends React.Component {
             this.setState({ error: true, purchased: false });
         }
     }
+    total = () =>{
+        const sum = this.state.cart.reduce((acc,el) =>{
+            return acc + parseInt(el.price)
+        },0)
+        return sum
+    }
 
     componentDidMount() {
         const data = localStorage.getItem('authorized');
@@ -108,6 +113,7 @@ class CartProducts extends React.Component {
                     >
                         <i className="fas fa-ban"></i> Not Enough Money</h1>
                 }
+                 <span className="total">Total - ${this.total()}</span>
                 <button
                     onClick={this.enable}
                     className="purchase">

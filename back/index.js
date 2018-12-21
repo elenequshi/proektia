@@ -40,6 +40,16 @@ app.get('/products/:id', (req,res) => {
     const product = Products.find( el => el.id == id)
     res.send(product)
 })
+app.get('/search/:name', (req,res) =>{
+    const name = req.params.name
+    const products = Products.filter(el => el.name.toLowerCase().startsWith(name))
+        res.send(products)
+})
+app.get('/search/product/:name', (req,res) =>{
+    const name = req.params.name
+    const product = Products.find(el => el.name === name)
+    res.send((product.id).toString())
+})
 app.post('/addtocart', (req,res) =>{
      const username = req.body.data
      const productId = req.body.productId
@@ -81,6 +91,7 @@ app.post('/message', (req,res) =>{
     const index = Users.indexOf(user)
     user.messages.push(req.body.message)
     Users.splice(index,1 ,user)
+    res.send(user.messages)
 
 })
 app.post('/purchases', (req,res) =>{
@@ -169,6 +180,11 @@ app.get('/admin/users/messages/:id', (req,res) =>{
     const id = req.params.id
     const user = Users.find(el => el.id == id)
     res.send(user.messages)
+})
+app.get('/admin/users/:id', (req,res) =>{
+    const id = req.params.id
+    const user = Users.find(el => el.id == id)
+    res.send(user.username)
 })
 app.post('/admin/edit/username', (req,res) =>{
     const data = req.body.data

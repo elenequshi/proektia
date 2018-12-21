@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 import Form from './common/form';
 import Joi from 'joi-browser';
 import '../css/contact.css';
-import '../css/form.css';
+
 
 class Contact extends Form {
 
@@ -57,20 +57,20 @@ class Contact extends Form {
                 <div className="contact--container__body">
                     <div className="left--container">
                         <div className="left--container__address">
-                            <p>
-                                Address<br />
+                            <div>
+                                <h4>Address</h4><br />
                                 The company name <br />
                                 lorem inpsum dolor<br />
                                 Glasgow Dr, 140
-						</p>
+						</div>
                         </div>
                         <div className="left--container__address1">
-                            <p>
-                                Address1 <br />
+                            <div>
+                                <h4>Address1</h4> <br />
                                 Tel:1117770001, <br />
                                 Fax:190-4509-494 <br />
                                 Email: contact@example.com
-						</p>
+						</div>
                         </div>
                     </div>
                     <div className="right--container">

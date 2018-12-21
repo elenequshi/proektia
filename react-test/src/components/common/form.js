@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Joi from 'joi-browser';
 import Input from './input';
-import { BrowserRouter, browserHistory, Router, Link, Route, Redirect } from 'react-router-dom';
+
 
 class Form extends Component {
     state = {

@@ -52,6 +52,19 @@
   color:green;
 }
 
+.cartSup {
+  color: blue;
+  font-weight: 600;
+}
+
+.purchaseSup {
+  color:green;
+  font-weight: 600;
+
+}
+
+
+
 @media all and (max-width: 519px){
   .user-nav{
     display: flex;
@@ -76,3 +89,5 @@
     min-width: 50%;
   }
 }
+
+

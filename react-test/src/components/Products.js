@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Product from './common/Product';
 import axios from 'axios';
-import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
-import ProductDetails from './common/ProductDetails';
+import { Link} from 'react-router-dom';
 import '../css/products.css';
 
 class Products extends Component {
@@ -13,7 +12,9 @@ class Products extends Component {
     getProducts = () => {
         axios.get('http://localhost:5000/products')
             .then(response => {
-                this.setState({ products: response.data })
+                if(this.mounted){
+                    this.setState({products:response.data})
+                }
             })
     }
     removeProduct = (id) => {
@@ -26,7 +27,11 @@ class Products extends Component {
     }
 
     componentDidMount() {
-        this.getProducts();
+        this.mounted = true
+        this.getProducts()
+    }
+    componentWillUnmount(){
+        this.mounted=false
     }
     render() {
         return (
@@ -44,7 +49,7 @@ class Products extends Component {
                         />
                     ))
                 }
-                {localStorage.getItem('authorized') == 'admin' &&
+                {localStorage.getItem('authorized') === 'admin' &&
                     <div className="product-item">
                         <i className="far fa-image fa-7x"></i>
                         <Link to="/admin/products/add" className="btn-custom">Add</Link>

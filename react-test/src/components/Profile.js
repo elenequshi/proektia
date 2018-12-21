@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import Products from './Products';
 import Account from './Account';
 
-class Profile extends React.Component {
+class Profile extends Component {
 
     state = {
         user: {

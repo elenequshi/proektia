@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import '../css/admin.css';
 
 
-class Admin extends React.Component {
+class Admin extends Component {
 
     render() {
         return (

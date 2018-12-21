@@ -1,6 +1,5 @@
 .cart-item-image{
   height: 200px;
-  margin-left: -5%;
   transition: all .3s linear;
 }
 
@@ -96,11 +95,11 @@
   }
 
 .last-li p{
-  font-size:1rem;
+  font-size: 1rem;
   }
 
 .last-li p:last-child{
-  font-size: 8rem;
+  font-size: .8rem;
   }
 
 }

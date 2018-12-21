@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
+import {  Link} from 'react-router-dom';
 
 const Product = ({ url, name, price, id, remove, addToCart }) => {
 	return (
@@ -12,7 +12,7 @@ const Product = ({ url, name, price, id, remove, addToCart }) => {
 			</div>
 			{localStorage.getItem('authorized') &&
 				localStorage.getItem('authorized') !== 'admin' &&
-				<button
+				<button className="btn-custom"
 					onClick={() => addToCart({ data: localStorage.getItem('authorized'), productId: id })}
 				>
 					Add To Cart

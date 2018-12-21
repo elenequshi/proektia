@@ -3,7 +3,6 @@ import Joi from "joi-browser";
 import Form from "./common/form";
 import axios from 'axios';
 import '../css/form.css';
-import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
 
 class ProductForm extends Form {
 

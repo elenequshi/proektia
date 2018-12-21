@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { BrowserRouter as Router, Link, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import { ProtectedRoute } from './routes/ProtectedRoute';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -45,27 +45,10 @@ class App extends Component {
     admin:false
   } 
 
-  // getProducts = () => {
-  //   axios.get('http://localhost:5000/products')
-  //   .then(response => {
-  //     console.log(response.data)
-  //      this.setState({products:response.data})
-  //   })
-  // }
-//   getUsers = () => {
-//     axios.get('http://localhost:5000/users')
-//     .then(response => {
-//       console.log(response.data)
-//        this.setState({products:response.data})
-//   })
-// }
+  
   registerUser = (newUser) => {
       axios.post('http://localhost:5000/register', newUser)
-      .then(response => response.data)
-      .then(newItem => {
-      })
-  
-  }
+    }
   userLogIn(change){
     this.setState({userLoggedIn:change})
   }
@@ -73,10 +56,7 @@ class App extends Component {
     this.setState({admin:change})
   }
 
-  // componentDidMount(){
-  //   this.getProducts()
-  //   this.getUsers()
-  // }
+  
   render() {
     return (
       <Router>

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import axios from 'axios';
 import CartProduct from './common/CartProduct';
 import '../css/cartProducts.css';
 
-class BoughtProducts extends React.Component {
+class BoughtProducts extends Component {
 
     state = {
         purchases: [],

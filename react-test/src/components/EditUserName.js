@@ -2,7 +2,7 @@ import React from 'react';
 import Joi from "joi-browser";
 import Form from "./common/form";
 import axios from 'axios';
-
+import '../css/form.css'
 class EditUserName extends Form {
 
     state = {
@@ -48,9 +48,9 @@ class EditUserName extends Form {
 
     render() {
         return (
-            <div>
-                <h1>Movie Form</h1>
-                <form onSubmit={this.handleSubmit}>
+            <div className="container-div">
+                <h1 className="main-title">Update Username</h1>
+                <form className="main-form"  onSubmit={this.handleSubmit}>
                     {this.renderInput("username", "Username")}
                     {this.renderButton("Edit")}
                 </form>
