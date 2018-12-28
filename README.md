@@ -1,7 +1,7 @@
 # proektia
  
  
- Clone the project \n
+ Clone the project;                        
  Open folder in the Text Editor 
  Open two Terminals
  In the first Terminal run "cd react-test" and run "npm install" (for dependencies),then "npm start"
