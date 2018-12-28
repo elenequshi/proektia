@@ -24,7 +24,7 @@ class UserPurchases extends Component {
     render() {
         return (
             <div>
-                {this.state.purchases.length === 0 && <h1>No Items To Be Displayed</h1>}
+                {this.state.purchases.length === 0 && <h1 className="noItems">No Items To Be Displayed</h1>}
                 {this.state.purchases.length !== 0 &&
                     this.state.purchases.map((el, index) => (
                         <CartProduct

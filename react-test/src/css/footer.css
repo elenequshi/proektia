@@ -18,13 +18,21 @@
   background-color: #fff;
   padding: 4px 12px;
   }
-  
+
+.footer-left > input{
+border:1px solid #999;
+}
+
 .subscribe:hover{
   background-color:#73B6E1;
   color:white;
   cursor: pointer;
   transition: color .3s ease-in;
   }
+
+.footer-right {
+  font-family: 'Ubuntu', sans-serif;
+}
 
 .footer-right p:hover{
   color: #73B6E1;

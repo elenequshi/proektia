@@ -6,7 +6,7 @@
   }
   
 .watches {
-  height:350px;
+  height:300px;
   margin-top:80px;
   }
 
@@ -22,17 +22,7 @@
   width:29%;
   }
 
-.watch:hover {
-  border-radius:40px;
-  -webkit-transform: scale(1.06);
-  -webkit-transition-timing-function: ease-in-out;
-  -webkit-transition-duration: 600ms;
-  -moz-transform: scale(1.06);
-  -moz-transition-timing-function: ease-in-out;
-  -moz-transition-duration: 600ms;
-  transform: rotate(360deg);
-  cursor:pointer;
-  }
+
 
   
 
@@ -44,22 +34,7 @@
 @media all and (min-width:520px) and (max-width: 860px) {
 
 .watch  {
-  width:30%;
-  }
-
-.watch:hover {
-  transform: rotate(0deg);
-  transition: .4s all;
-  -webkit-transition: .4s all;
-  -o-transition: .4s all;
-  -ms-transition: .4s all;
-  -moz-transition: .4s all;
-  transform: rotatey(360deg);
-  -webkit-transform: rotatey(360deg);
-  -moz-transform: rotatey(360deg);
-  -o-transform: rotatey(360deg);
-  -ms-transform: rotatey(360deg);
-  border-radius: 0px;
+  width:31%;
   }
 
 .slider {
@@ -96,21 +71,7 @@
   margin:auto;
   height: 180px;
   }
-.watch:hover {
-  border-radius:0px;
-  transform: rotate(0deg);
-  transition: .4s all;
-  -webkit-transition: .4s all;
-  -o-transition: .4s all;
-  -ms-transition: .4s all;
-  -moz-transition: .4s all;
-  transform: rotatey(0deg);
-  -webkit-transform: rotatey(0deg);
-  -moz-transform: rotatey(0deg);
-  -o-transform: rotatey(0deg);
-  -ms-transform: rotatey(0deg);
-  }
-  
+
 }
 
 

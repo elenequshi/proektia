@@ -11,7 +11,8 @@
 
 .main-title{
   text-align: center;
-  font-family: 'Lora-Regular';
+  font-family: 'ZCOOL XiaoWei', serif;
+  color:#73B6E1;
   }
   
 .btn{
@@ -35,8 +36,8 @@
 
 @media all and (min-width:520px) and (max-width: 860px) {
 
-  .btn{
-    width:50%;
+.btn{
+  width:50%;
   }
 
 }
@@ -46,7 +47,8 @@
 
 @media all and (max-width: 519px) {
 
-  .main-form {
-    width:80%;
+.main-form {
+  width:80%;
   }
+  
 }

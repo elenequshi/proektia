@@ -10,7 +10,7 @@ class Slider extends Component {
                 <Carousel effect="scrollx" autoplay>
 
                     <div>
-                        <img alt=''  src={"http://pristinewatcheslondon.co.uk/img/omegabanner.jpg"} className="slider" />
+                        <img alt='' src={"http://pristinewatcheslondon.co.uk/img/omegabanner.jpg"} className="slider" />
                     </div>
 
                     <div>
@@ -33,9 +33,10 @@ class Slider extends Component {
 
                 <div className="watches">
                     <div className="wrapper">
-                        <img alt='' src={"https://media.gqindia.com/wp-content/uploads/2015/12/ulysse-nardin-watch-866x487.jpg"} className="watch" />
-                        <img alt='' src={"https://5.imimg.com/data5/PC/KN/MY-40413477/ulysse-nardin-watch-for-men-500x500.jpg"} className="watch" />
-                        <img alt='' src={"http://www.androidguys.com/wp-content/uploads/2016/07/ulysse-nardin-luxury-watch.jpg"} className="watch" />
+
+                        <img alt='watch1' src={"https://5.imimg.com/data5/PC/KN/MY-40413477/ulysse-nardin-watch-for-men-500x500.jpg"} className="watch" />
+                        <img alt='watch2' src={"http://cdn2.rsvponline.mx/files/rsvp/uploads/2017/meteoris_de_louis_monet.jpg"} className="watch" />
+                        <img alt='watch3' src={"http://www.androidguys.com/wp-content/uploads/2016/07/ulysse-nardin-luxury-watch.jpg"} className="watch" />
 
                     </div>
                 </div>

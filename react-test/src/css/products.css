@@ -6,7 +6,7 @@
   text-align: center;
   height: 100%;
   max-width: 90%;
-  margin:auto;
+  margin: 50px auto;
   }
   
 .product-item {
@@ -16,6 +16,7 @@
   position:relative;
   margin-bottom:15px;
   margin-left:3%;
+  position: relative;
   }
 
 .product-item:hover {
@@ -27,6 +28,12 @@
   -moz-transition-timing-function: ease-out;
   -moz-transition-duration: 500ms;
   cursor:pointer;
+  }
+
+  .fa-image{
+    position: absolute;
+    top: 35%;
+    left:30%;
   }
 
 .product-link {
@@ -130,5 +137,11 @@
   padding:0;
   margin-left:1%;
   }
+
+.btn-custom {
+  padding: 5px 5px;
+  position: relative;
+  margin-top:10px;
+}
 
 }

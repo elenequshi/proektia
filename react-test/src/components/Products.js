@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Product from './common/Product';
 import axios from 'axios';
-import { Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import '../css/products.css';
 
 class Products extends Component {
@@ -36,8 +36,17 @@ class Products extends Component {
     render() {
         return (
             <div className="product-container">
+
+            {localStorage.getItem('authorized') === 'admin' &&
+                    <div className="product-item">
+                        <i className="far fa-image fa-7x"></i>
+                        <Link to="/admin/products/add" className="btn-custom">Add</Link>
+                    </div>
+                }
                 {
                     this.state.products.map((el) => (
+
+                        
                         <Product
                             addToCart={this.props.addToCart}
                             remove={this.removeProduct}
@@ -47,14 +56,10 @@ class Products extends Component {
                             name={el.name}
                             url={el.url}
                         />
+
                     ))
                 }
-                {localStorage.getItem('authorized') === 'admin' &&
-                    <div className="product-item">
-                        <i className="far fa-image fa-7x"></i>
-                        <Link to="/admin/products/add" className="btn-custom">Add</Link>
-                    </div>
-                }
+                
             </div>
         )
     }

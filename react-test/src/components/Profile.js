@@ -10,7 +10,8 @@ class Profile extends Component {
 
         },
         cartLength: 0,
-        purchases: 0
+        purchases: 0,
+        shaking: false
     }
     getUser(username) {
         axios.post('http://localhost:5000/user', username)
@@ -37,9 +38,16 @@ class Profile extends Component {
         axios.post('http://localhost:5000/addtocart', details)
             .then(response => {
                 this.setState({ cartLength: this.state.cartLength + 1 });
+                this.shake();
             })
+
+
     }
 
+    shake = () => {
+        this.setState({shaking:true});
+        setTimeout(() =>this.setState({shaking:false}), 900)
+        }
 
 
     componentDidMount() {
@@ -52,6 +60,7 @@ class Profile extends Component {
         return (
             <div>
                 <Account
+                    shaking={this.state.shaking}
                     purchases={this.state.purchases}
                     cartLength={this.state.cartLength}
                     balance={this.state.user.balance}

@@ -56,26 +56,24 @@ class Navigation extends Component {
                             <li className="active">
                                 <Link to='/'>Home</Link>
                             </li>
-                            {this.props.showLog &&
-                                !this.props.admin &&
+                            {!localStorage.getItem('authorized') &&
                                 <li className="grid">
                                     <Link to='/login'>Login</Link>
                                 </li>
                             }
-                            {this.props.showLog &&
-                                !this.props.admin &&
+                            {!localStorage.getItem('authorized') &&
                                 <li className="grid">
                                     <Link to='/register'>Registration</Link>
                                 </li>
                             }
-                            {!this.props.showLog &&
-                                !this.props.admin &&
+                            {localStorage.getItem('authorized') &&
+                             localStorage.getItem('authorized') !== 'admin' &&
                                 <li className="grid">
                                     <Link to='/profile'>Profile</Link>
                                 </li>
                             }
-                            {this.props.showLog &&
-                                this.props.admin &&
+                            {localStorage.getItem('authorized') &&
+                             localStorage.getItem('authorized') === 'admin' &&
                                 <li className="grid">
                                     <Link to='/admin'>Admin</Link>
                                 </li>
@@ -83,7 +81,7 @@ class Navigation extends Component {
                             <li className="grid">
                                 <Link to='/'>About Us</Link>
                             </li>
-                            {(!this.props.showLog || this.props.admin) &&
+                            {localStorage.getItem('authorized') &&
                                 <li className="grid">
                                     <Link to='/' onClick={this.logOut}>Log Out</Link>
                                 </li>

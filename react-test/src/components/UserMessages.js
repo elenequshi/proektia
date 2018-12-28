@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import '../css/userMessages.css';
 
@@ -9,7 +9,7 @@ class UserMessages extends Component {
         messages: [
 
         ],
-        username:''
+        username: ''
     }
 
     getMessages() {
@@ -18,11 +18,11 @@ class UserMessages extends Component {
                 this.setState({ messages: response.data });
             })
     }
-    getUserName(){
+    getUserName() {
         axios.get('http://localhost:5000/admin/users/' + this.props.match.params.id)
-        .then(response => {
-            this.setState({ username: response.data });
-        })
+            .then(response => {
+                this.setState({ username: response.data });
+            })
     }
     componentDidMount() {
         this.getMessages();
@@ -32,20 +32,20 @@ class UserMessages extends Component {
     render() {
         return (
             <div>
-                {this.state.messages.length === 0 && <h1>No Messages To Be Displayed</h1>}
+                {this.state.messages.length === 0 && <h1 className="noItems">No Messages To Be Displayed</h1>}
                 {this.state.messages.length !== 0 && <>
                     <div className="messageFrom">From {this.state.username} : </div>
                     {this.state.messages.map((el, index) => (
                         <div className="messages"
                             key={index}
-                        > 
+                        >
                             {el}
                         </div>
-                      
+
                     ))}
-                    </>
-                    }
-                    
+                </>
+                }
+
             </div>
         )
     }

@@ -27,6 +27,7 @@
   padding-right: 45px;
   color: #333;
   font-size: 16px;
+  font-family: 'Muli', sans-serif;
   text-decoration: none;
   transition: color .4s ease-in-out;
   -moz-transition: color .4s ease-in-out;
@@ -106,7 +107,9 @@ form{
 
 }
 
-
+.searchInput::-webkit-calendar-picker-indicator {
+  display: none;
+}
 
 
 /* This is responsive for mobile */

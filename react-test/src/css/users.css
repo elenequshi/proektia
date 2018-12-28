@@ -12,7 +12,7 @@
     color:#73B6E1;
   }
   
-.username:hover {
+.username:hover, .username>:hover {
     cursor: pointer;
     color:#333;  
   }
