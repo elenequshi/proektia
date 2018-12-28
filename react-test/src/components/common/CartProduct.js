@@ -26,4 +26,4 @@ const CartProduct = ({ price, name, url, id, index, remove, purchased }) => {
     );
 }
 
-export default CartProduct
+export default CartProduct;

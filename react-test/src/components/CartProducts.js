@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import CartProduct from './common/CartProduct';
 import axios from 'axios';
 import '../css/cartProducts.css';
@@ -15,19 +15,21 @@ class CartProducts extends Component {
         purchased: false
     }
 
-
+    // this function fetches the cart products of the user
     getCart(username) {
         axios.post('http://localhost:5000/cart', username)
             .then(response => {
                 this.setState({ cart: response.data });
             })
     }
+    // the function fetches the balance of the user
     getBalance(username) {
         axios.post('http://localhost:5000/balance', username)
             .then(response => {
                 this.setState({ balance: response.data });
             })
     }
+    // the function removes a single product from the cart
     removeCartProduct = id => {
         axios.delete('http://localhost:5000/cart/remove/' + id + '/' + this.state.data)
             .then(response => response.data)
@@ -36,13 +38,15 @@ class CartProducts extends Component {
                 this.setState({ cart: cart, error: false, purchased: false });
             })
     }
-
+    //this functions adds purchased products from the cart to the purchases of the user
     purchaseProducts = (data) => {
         axios.post('http://localhost:5000/purchase', data)
             .then(response => {
                 this.setState({ cart: response.data });
             })
     }
+
+    //tells the user wether they have enough money to make a purchase or not
     enable = () => {
         const data = this.state.data;
         const sum = this.state.cart.reduce((acc, el) => {
@@ -56,11 +60,12 @@ class CartProducts extends Component {
             this.setState({ error: true, purchased: false });
         }
     }
-    total = () =>{
-        const sum = this.state.cart.reduce((acc,el) =>{
+    // calculates the total price of all products in the cart
+    total = () => {
+        const sum = this.state.cart.reduce((acc, el) => {
             return acc + parseInt(el.price)
-        },0)
-        return sum
+        }, 0)
+        return sum;
     }
 
     componentDidMount() {
@@ -113,7 +118,7 @@ class CartProducts extends Component {
                     >
                         <i className="fas fa-ban"></i> Not Enough Money</h1>
                 }
-                 <span className="total">Total - ${this.total()}</span>
+                <span className="total">Total - ${this.total()}</span>
                 <button
                     onClick={this.enable}
                     className="purchase">

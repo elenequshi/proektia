@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Product from './common/Product';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../css/products.css';
 
 class Products extends Component {
@@ -9,14 +9,16 @@ class Products extends Component {
     state = {
         products: []
     }
+    // get all the products
     getProducts = () => {
         axios.get('http://localhost:5000/products')
             .then(response => {
-                if(this.mounted){
-                    this.setState({products:response.data})
+                if (this.mounted) {
+                    this.setState({ products: response.data })
                 }
             })
     }
+    // remove the product with the id
     removeProduct = (id) => {
         axios.delete('http://localhost:5000/admin/products/remove/' + id)
             .then(response => response.data)
@@ -28,16 +30,16 @@ class Products extends Component {
 
     componentDidMount() {
         this.mounted = true
-        this.getProducts()
+        this.getProducts();
     }
-    componentWillUnmount(){
-        this.mounted=false
+    componentWillUnmount() {
+        this.mounted = false;
     }
     render() {
         return (
             <div className="product-container">
 
-            {localStorage.getItem('authorized') === 'admin' &&
+                {localStorage.getItem('authorized') === 'admin' &&
                     <div className="product-item">
                         <i className="far fa-image fa-7x"></i>
                         <Link to="/admin/products/add" className="btn-custom">Add</Link>
@@ -46,7 +48,7 @@ class Products extends Component {
                 {
                     this.state.products.map((el) => (
 
-                        
+
                         <Product
                             addToCart={this.props.addToCart}
                             remove={this.removeProduct}
@@ -59,7 +61,7 @@ class Products extends Component {
 
                     ))
                 }
-                
+
             </div>
         )
     }

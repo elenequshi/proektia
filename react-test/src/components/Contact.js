@@ -18,7 +18,7 @@ class Contact extends Form {
         },
         errors: {}
     }
-
+    // validation of the input data
     schema = {
         name: Joi.string()
             .required()
@@ -34,11 +34,11 @@ class Contact extends Form {
             .required()
             .label("Message")
     }
-
+    // add the message sent by the user to the admin in the user's message box
     addMessage = (newMessage) => {
         axios.post('http://localhost:5000/message', newMessage)
     }
-
+    // sned the message when the user clicks the submit button
     doSubmit = () => {
         const data = localStorage.getItem('authorized');
         const message = this.state.data.message;

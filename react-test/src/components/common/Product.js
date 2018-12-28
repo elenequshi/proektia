@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Product = ({ url, name, price, id, remove, addToCart }) => {
 	return (
@@ -10,7 +10,7 @@ const Product = ({ url, name, price, id, remove, addToCart }) => {
 				<p className="product-par">Explore Now</p>
 				<h4><i className="fas fa-shopping-cart"></i><span className="product-price"> ${price}</span></h4>
 			</div>
-			
+
 			{localStorage.getItem('authorized') &&
 				localStorage.getItem('authorized') !== 'admin' &&
 				<button className="btn-custom"

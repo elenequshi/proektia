@@ -19,6 +19,7 @@ class RegistrationForm extends Form {
         errors: {}
     }
 
+    // data validation with joi which ensures that the user  can't leave any input field empty
     schema = {
         _id: Joi.string(),
         username: Joi.string()
@@ -41,7 +42,7 @@ class RegistrationForm extends Form {
             .required()
             .label("Balance")
     }
-
+    //function for fetching all the users
     getUsers = () => {
         axios.get('http://localhost:5000/users')
             .then(response => {
@@ -53,7 +54,7 @@ class RegistrationForm extends Form {
         this.getUsers();
     }
 
-
+    //registering the user when they click the submit button
     doSubmit = () => {
         const data = this.state.data;
         this.props.register(data);

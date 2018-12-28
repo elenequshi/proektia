@@ -12,18 +12,18 @@ class Navigation extends Component {
         ]
     }
 
-
+    // removes the username from the localstorage after log out
     logOut = () => {
-        this.props.showLogin(true);
-        this.props.showAdmin(false);
         localStorage.removeItem('authorized');
     }
+    //searches the product when the user types its name
     getSearch = (name) => {
         axios.get('http://localhost:5000/search/' + name)
             .then(response => {
                 this.setState({ products: response.data })
             })
     }
+    // get the selected product when the user clicks the search icon
     getProduct = (name) => {
         axios.get('http://localhost:5000/search/product/' + name)
             .then(response => {
@@ -34,16 +34,18 @@ class Navigation extends Component {
 
             })
     }
+    // resets the value of the search input field to the empty string after the end of the search
     change = (e) => {
         if (e.target.value !== '') {
-            this.getSearch(e.target.value)
+            this.getSearch(e.target.value);
         }
     }
+
     onSubmit = (e) => {
-        e.preventDefault()
-        let name = e.target.children[0].value
-        this.getProduct(name)
-        e.target.children[0].value = ''
+        e.preventDefault();
+        let name = e.target.children[0].value;
+        this.getProduct(name);
+        e.target.children[0].value = '';
     }
     render() {
         return (
@@ -67,13 +69,13 @@ class Navigation extends Component {
                                 </li>
                             }
                             {localStorage.getItem('authorized') &&
-                             localStorage.getItem('authorized') !== 'admin' &&
+                                localStorage.getItem('authorized') !== 'admin' &&
                                 <li className="grid">
                                     <Link to='/profile'>Profile</Link>
                                 </li>
                             }
                             {localStorage.getItem('authorized') &&
-                             localStorage.getItem('authorized') === 'admin' &&
+                                localStorage.getItem('authorized') === 'admin' &&
                                 <li className="grid">
                                     <Link to='/admin'>Admin</Link>
                                 </li>

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import '../../css/details.css';
 
@@ -15,14 +15,15 @@ class ProductDetails extends Component {
     };
 
 
-    
 
+    //this functions fetches a single product with the unique id
     getProduct = () => {
         axios.get('http://localhost:5000/products/' + this.props.match.params.id)
             .then(response => {
                 this.setState({ product: response.data })
             })
     }
+    // this function adds a product into the user's cart
     addToCart(details) {
         axios.post('http://localhost:5000/addtocart', details)
             .then(response => {
@@ -35,21 +36,21 @@ class ProductDetails extends Component {
     }
     render() {
 
-        
+
         return (
-           
+
             <div className="details">
-            <img src={this.state.product.url} alt="" className="details-image" />
+                <img src={this.state.product.url} alt="" className="details-image" />
                 <div className="details-text">
                     <h2 className="details-name">{this.state.product.name}</h2>
                     <h3 className="details-price">${this.state.product.price}</h3>
                     <hr />
                     <p className="details-description">{this.state.product.desc} {this.state.product.desc} {this.state.product.desc}</p>
-                 
-                </div>                
 
-            </div>  
-            
+                </div>
+
+            </div>
+
         )
     }
 }

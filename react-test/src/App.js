@@ -40,43 +40,21 @@ const Main = () => {
 
 
 class App extends Component {
-  state= {
-    showLogin: true,
-    admin:false
-  } 
+  
 
   
   registerUser = (newUser) => {
       axios.post('http://localhost:5000/register', newUser)
     }
-  userLogIn(change){
-    this.setState({userLoggedIn:change})
-  }
-  showAdmin(change){
-    this.setState({admin:change})
-  }
-
+  
   
   render() {
     return (
       <Router>
         <div className="App">
        <Header/>
-       <Route 
-       component= { (props) =>
-        <Navigation 
-        admin={this.state.admin}
-        showLog={this.state.showLogin}
-        showLogin={ (change) => { this.setState({showLogin:change}) }
-       } 
-       showAdmin={ (change) => { this.setState({admin:change}) }
-     } 
-     {...props}
-       />
-      }
-       />
-      
-       <Route 
+     <Navigation/>
+      <Route 
           path="/" 
           exact
           component={Main}

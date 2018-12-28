@@ -13,7 +13,7 @@ class Login extends Form {
         },
         errors: {}
     }
-
+    // validation of the input data
     schema = {
         _id: Joi.string(),
         username: Joi.string()
@@ -24,7 +24,7 @@ class Login extends Form {
             .label("Password"),
     }
 
-
+    // after the registration the user can log into their profile page
     login = (user) => {
         axios.post('http://localhost:5000/login', user)
             .then(response => response.data)

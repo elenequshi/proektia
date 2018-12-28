@@ -16,7 +16,7 @@ class ProductForm extends Form {
         products: [],
         errors: {}
     }
-
+    // validating the input data
     schema = {
         id: Joi.number(),
         name: Joi.string()
@@ -32,7 +32,7 @@ class ProductForm extends Form {
             .required()
             .label("Price")
     }
-
+    // fetch all the products from the server
     getProducts() {
 
         axios.get('http://localhost:5000/products')
@@ -40,6 +40,7 @@ class ProductForm extends Form {
                 this.setState({ products: response.data })
             })
     }
+    // fetch the individual product with its id
     getProduct() {
 
         axios.get('http://localhost:5000/products/' + this.props.match.params.id)
@@ -48,35 +49,35 @@ class ProductForm extends Form {
             })
 
     }
-
+    // adding a new product by the admin
     addProduct(newProduct) {
         axios.post('http://localhost:5000/admin/addproduct', newProduct)
     }
-
+    // editting the existing product by the admin
     editProduct = (newProduct) => {
         axios.post('http://localhost:5000/admin/products/edit', newProduct)
     }
 
     componentDidMount() {
-        this.getProducts()
+        this.getProducts();
         if (this.props.match.params.id) {
-            this.getProduct()
+            this.getProduct();
         }
     }
 
 
 
-
+    // updating the product list after the admin submits the form
     doSubmit = () => {
         if (this.props.match.params.id) {
-            const id = this.props.match.params.id
-            const data = this.state.data
-            data.id = id
-            this.editProduct(data)
+            const id = this.props.match.params.id;
+            const data = this.state.data;
+            data.id = id;
+            this.editProduct(data);
 
         } else {
-            const data = this.state.data
-            this.addProduct(data)
+            const data = this.state.data;
+            this.addProduct(data);
         }
 
         this.props.history.replace("/admin")

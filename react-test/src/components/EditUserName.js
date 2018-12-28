@@ -20,13 +20,14 @@ class EditUserName extends Form {
             .label('Username'),
 
     }
+    // get all the users
     getUsers = () => {
         axios.get('http://localhost:5000/users')
             .then(response => {
                 this.setState({ users: response.data });
             })
     }
-
+    //admin can edit the username of the individual user 
     editUser = (newUser) => {
         axios.post('http://localhost:5000/admin/edit/username', newUser)
     }
@@ -38,7 +39,7 @@ class EditUserName extends Form {
         this.setState({ data: { username } });
     }
 
-
+    // saves the edited username of the user when the admin submits the form
     doSubmit = () => {
         const data = this.state.data.username;
         const username = this.props.match.params.username;
@@ -50,9 +51,9 @@ class EditUserName extends Form {
         return (
             <div className="container-div">
                 <h1 className="main-title">Update Username</h1>
-                <form className="main-form"  onSubmit={this.handleSubmit}>
-                    {this.renderInput("username", "Username")}
-                    {this.renderButton("Edit")}
+                <form className="main-form" onSubmit={this.handleSubmit}>
+                    {this.renderInput("username", "Username")};
+                    {this.renderButton("Edit")};
                 </form>
             </div>
 

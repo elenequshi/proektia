@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import CartProduct from './common/CartProduct';
 
@@ -10,7 +10,7 @@ class UserPurchases extends Component {
         ],
         purchased: true
     }
-
+    //admin gets the products  purchased by the user
     getPurchases() {
         axios.get('http://localhost:5000/admin/users/purchases/' + this.props.match.params.id)
             .then(response => {

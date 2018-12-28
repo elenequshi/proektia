@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import CartProduct from './common/CartProduct';
 import '../css/cartProducts.css';
@@ -9,7 +9,7 @@ class BoughtProducts extends Component {
         purchases: [],
         purchased: true,
     }
-
+    //this function returns the products the user purchased
     getPurchases(username) {
         axios.post('http://localhost:5000/purchases', username)
             .then(response => {
