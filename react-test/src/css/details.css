@@ -35,7 +35,7 @@
 
 
 
- /* This is responsive for tablet */
+  /* This is responsive for tablet */
 
  @media all and (min-width:520px) and (max-width: 860px) {  
   .details-image {
@@ -48,7 +48,7 @@
 
 
 
-/* This is responsive for mobile */
+  /* This is responsive for mobile */
 
 @media all and (max-width: 519px) {
   .details-image {

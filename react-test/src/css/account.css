@@ -65,36 +65,41 @@
 
 
 
-/* This is responsive for tablet */
+  /* This is responsive for tablet */
 
 @media all and (min-width:520px) and (max-width: 860px){
-  .user-nav h4{
-    height: auto;
-    width: 33%;
-    font-size: 1rem;
+
+.user-nav h4{
+  height: auto;
+  width: 33%;
+  font-size: 1rem;
   }
-  .welcome{
-    min-width: 50%;
+
+.welcome{
+  min-width: 50%;
   }
+
 }
 
 
 
-
-/* This is responsive for mobile */
+  /* This is responsive for mobile */
 
 @media all and (max-width: 519px){
+
   .user-nav{
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
   }
+
   .user-nav h4{
     font-size: 1rem;
     width: 100%;
     height: auto;
     text-align: center;
   }
+
 }
 
 

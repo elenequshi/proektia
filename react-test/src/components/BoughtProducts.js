@@ -9,6 +9,8 @@ class BoughtProducts extends Component {
         purchases: [],
         purchased: true,
     }
+
+
     //this function returns the products the user purchased
     getPurchases(username) {
         axios.post('http://localhost:5000/purchases', username)

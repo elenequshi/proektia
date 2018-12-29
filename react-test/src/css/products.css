@@ -30,10 +30,18 @@
   cursor:pointer;
   }
 
-  .fa-image{
-    position: absolute;
-    top: 35%;
-    left:30%;
+.product-item:hover .product-name {
+  color: #73B6E1;
+  transition: color .6s ease-in-out;
+  -moz-transition: color .6s ease-in-out;
+  -webkit-transition: color .6s ease-in-out;
+  -o-transition: color .6s ease-in-out;
+  }
+
+.fa-image{
+  position: absolute;
+  top: 35%;
+  left:30%;
   }
 
 .product-link {

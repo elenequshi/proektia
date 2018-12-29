@@ -8,6 +8,8 @@ class Form extends Component {
         data: {},
         errors: {}
     }
+
+
     // this function is for validation of the user input
     validate = () => {
         const { error } = Joi.validate(this.state.data, this.schema, {
@@ -23,6 +25,8 @@ class Form extends Component {
         }
         return errors;
     }
+
+
     //this function generates errors if the user types invalid data
     validateProperty = ({ name, value }) => {
         const obj = { [name]: value };
@@ -30,6 +34,8 @@ class Form extends Component {
         const { error } = Joi.validate(obj, schema);
         return error ? error.details[0].message : null;
     }
+
+
     //this function runs when the user clicks submit button
     handleSubmit = (e) => {
         e.preventDefault();
@@ -38,6 +44,8 @@ class Form extends Component {
         if (errors) return;
         this.doSubmit();
     }
+
+
     // this function generates errors when the user inputs invalid data
     handleChange = e => {
         const errors = { ...this.state.errors };
@@ -64,6 +72,8 @@ class Form extends Component {
         data[e.currentTarget.name] = e.currentTarget.value;
         this.setState({ data, errors });
     }
+
+
     // this function creates function
     renderButton(label) {
         return (
@@ -73,6 +83,8 @@ class Form extends Component {
 
         )
     }
+
+
     //this function generates inputs
     renderInput(name, label, type = "text") {
         const { data, errors } = this.state;
@@ -88,6 +100,8 @@ class Form extends Component {
         )
 
     }
+
+
     //this function generates textarea
     renderTextArea(name, label, type) {
         return (

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+
 const Product = ({ url, name, price, id, remove, addToCart }) => {
 	return (
 		<div className="product-item">

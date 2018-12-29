@@ -24,6 +24,7 @@ import UserMessages from './components/UserMessages';
 import EditUserName from './components/EditUserName';
 import ProductForm from './components/ProductForm';
 import Contact from './components/Contact';
+import About from './components/About'
 import 'antd/dist/antd.css';
 
 
@@ -77,6 +78,7 @@ class App extends Component {
       {...props}
          />}
          />
+         <Route path="/about" component={About}/>
          <ProtectedRoute 
          exact
          path="/profile" 

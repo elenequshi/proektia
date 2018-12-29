@@ -16,7 +16,9 @@ class Contact extends Form {
             email: "",
             message: "",
         },
-        errors: {}
+        errors: {},
+        animation: false,
+        display:'hide'
     }
     // validation of the input data
     schema = {
@@ -43,10 +45,19 @@ class Contact extends Form {
         const data = localStorage.getItem('authorized');
         const message = this.state.data.message;
         this.addMessage({ message, data });
-        this.props.history.replace("/profile");
+        this.setState({animation:true})
+        setTimeout(() => this.setState({display:"show"}), 500)
     }
 
+ generateClass = () => {
+    return this.state.animation ? " slide-out-top" : "";
 
+ }
+ display = () =>{
+     return this.state.display;
+ }
+
+ 
 
     render() {
         return (
@@ -73,8 +84,11 @@ class Contact extends Form {
 						</div>
                         </div>
                     </div>
-                    <div className="right--container">
-                        <form onSubmit={this.handleSubmit}>
+                    
+            
+                    <div className = "right--container">
+                    <h2 className={this.display()}>Thanks for feedback!</h2> 
+                        <form onSubmit={this.handleSubmit} className={this.generateClass()}>
                             <div className="right--container__item1">
                                 {this.renderInput("name", "Name")}
                                 {this.renderInput("phone", "Phone")}

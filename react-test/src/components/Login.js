@@ -33,15 +33,17 @@ class Login extends Form {
                     localStorage.setItem('authorized', result.username);
                     const username = localStorage.getItem('authorized');
                     if (username === 'admin') {
-                        this.props.showAdmin(true);
                         this.props.history.replace("/admin");
                     } else {
-                        this.props.showLogin(false);
                         this.props.history.replace("/profile");
                     }
                 }
                 else {
                     localStorage.removeItem('authorized');
+                    const errors = {
+                        password:"Username or Password is incorrect"
+                    }
+                    this.setState({errors})
                 }
 
             })

@@ -15,7 +15,6 @@ class ProductDetails extends Component {
     };
 
 
-
     //this functions fetches a single product with the unique id
     getProduct = () => {
         axios.get('http://localhost:5000/products/' + this.props.match.params.id)
@@ -23,6 +22,8 @@ class ProductDetails extends Component {
                 this.setState({ product: response.data })
             })
     }
+
+
     // this function adds a product into the user's cart
     addToCart(details) {
         axios.post('http://localhost:5000/addtocart', details)
@@ -34,6 +35,7 @@ class ProductDetails extends Component {
     componentDidMount() {
         this.getProduct();
     }
+
     render() {
 
 

@@ -81,7 +81,7 @@ class Navigation extends Component {
                                 </li>
                             }
                             <li className="grid">
-                                <Link to='/'>About Us</Link>
+                                <Link to='/about'>About Us</Link>
                             </li>
                             {localStorage.getItem('authorized') &&
                                 <li className="grid">

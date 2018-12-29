@@ -15,6 +15,7 @@ class CartProducts extends Component {
         purchased: false
     }
 
+
     // this function fetches the cart products of the user
     getCart(username) {
         axios.post('http://localhost:5000/cart', username)
@@ -22,6 +23,8 @@ class CartProducts extends Component {
                 this.setState({ cart: response.data });
             })
     }
+
+
     // the function fetches the balance of the user
     getBalance(username) {
         axios.post('http://localhost:5000/balance', username)
@@ -29,6 +32,8 @@ class CartProducts extends Component {
                 this.setState({ balance: response.data });
             })
     }
+
+
     // the function removes a single product from the cart
     removeCartProduct = id => {
         axios.delete('http://localhost:5000/cart/remove/' + id + '/' + this.state.data)
@@ -38,6 +43,8 @@ class CartProducts extends Component {
                 this.setState({ cart: cart, error: false, purchased: false });
             })
     }
+
+
     //this functions adds purchased products from the cart to the purchases of the user
     purchaseProducts = (data) => {
         axios.post('http://localhost:5000/purchase', data)
@@ -45,6 +52,7 @@ class CartProducts extends Component {
                 this.setState({ cart: response.data });
             })
     }
+
 
     //tells the user wether they have enough money to make a purchase or not
     enable = () => {
@@ -60,6 +68,8 @@ class CartProducts extends Component {
             this.setState({ error: true, purchased: false });
         }
     }
+
+
     // calculates the total price of all products in the cart
     total = () => {
         const sum = this.state.cart.reduce((acc, el) => {

@@ -1,0 +1,61 @@
+.container-about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+.story, .mission{
+    max-width: 60%;
+    padding: 30px 0;
+    
+}
+p{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1.1rem;
+}
+
+h2{
+    text-align: center;
+    font-family: 'ZCOOL XiaoWei', serif;
+}
+hr.style-eight {
+    overflow: visible; /* For IE */
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+}
+hr.style-eight:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+
+
+    /* This is responsive for tablet */
+
+@media all and (min-width:520px) and (max-width: 860px) {
+
+    p{
+        font-size: 1rem;
+    }
+
+}
+
+
+    /* This is responsive for mobile */
+
+@media all and (max-width: 519px) {
+
+    p{
+        font-size: .9rem;
+    }
+
+}

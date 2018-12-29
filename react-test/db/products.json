@@ -4,21 +4,21 @@
         "name": "Timex",
         "url" : "https://n3.sdlcdn.com/imgs/e/v/o/SDL044502225_1-6ee47.jpg",
         "desc" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ",
-        "price": "1230"
+        "price": "740"
     },
     {
         "id": 2,
         "name": "Cassio",
         "url" : "http://assets.myntassets.com/assets/images/1405278/2018/3/5/11520252607778-CASIO-Edifice-Men-Blue-Dial-Chronograph-Watch-EX302-1121520252607568-1.jpg",
         "desc" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
-        "price": "3150"
+        "price": "1150"
     },
     {
         "id": 3,
         "name": "Ambassador",
         "url" : "https://static.swatch.com/images/product/SYXS106C/sa000/SYXS106C_sa000_sr10.jpg",
         "desc" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
-        "price": "1950"
+        "price": "950"
     },
     {
         "id": 4,
@@ -39,7 +39,7 @@
         "name": "Swatch",
         "url" : "https://citizenwatches.global.ssl.fastly.net/media/catalog/product/cache/8/small_image/295x/af097278c5db4767b0fe9bb92fe21690/f/e/fe6026-50h_p.jpg",
         "desc" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
-        "price": "2330"
+        "price": "630"
     },
     {
         "id": 7,

@@ -150,21 +150,18 @@ app.post('/login', (req, res) => {
     let admin = (Admin.username === username && Admin.password === password)
         ? true : false
     if (!user && !admin) {
-        return
-    }
-
-    if (admin || user.username) {
+        res.json({
+            auth: false,
+            message: 'user not found'
+        })
+    }else{
         res.json({
             username,
             password,
             auth: true
         })
-    } else {
-        res.json({
-            auth: false,
-            message: 'user not found'
-        })
     }
+
 })
 
 app.delete('/cart/remove/:id/:username', (req, res) => {
