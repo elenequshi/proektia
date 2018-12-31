@@ -83,6 +83,7 @@ class CartProducts extends Component {
         this.getCart({ data });
         this.getBalance({ data });
     }
+
     render() {
         const cart = this.state.cart;
 
@@ -140,4 +141,5 @@ class CartProducts extends Component {
 
 
 }
+
 export default CartProducts;

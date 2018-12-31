@@ -154,7 +154,7 @@ app.post('/login', (req, res) => {
             auth: false,
             message: 'user not found'
         })
-    }else{
+    } else {
         res.json({
             username,
             password,

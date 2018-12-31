@@ -4,11 +4,13 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../css/products.css';
 
+
 class Products extends Component {
 
     state = {
         products: []
     }
+
     // get all the products
     getProducts = () => {
         axios.get('http://localhost:5000/products')
@@ -18,6 +20,7 @@ class Products extends Component {
                 }
             })
     }
+
     // remove the product with the id
     removeProduct = (id) => {
         axios.delete('http://localhost:5000/admin/products/remove/' + id)
@@ -35,6 +38,7 @@ class Products extends Component {
     componentWillUnmount() {
         this.mounted = false;
     }
+    
     render() {
         return (
             <div className="product-container">

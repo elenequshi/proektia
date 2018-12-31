@@ -10,6 +10,7 @@ class UserPurchases extends Component {
         ],
         purchased: true
     }
+
     //admin gets the products  purchased by the user
     getPurchases() {
         axios.get('http://localhost:5000/admin/users/purchases/' + this.props.match.params.id)
@@ -17,6 +18,7 @@ class UserPurchases extends Component {
                 this.setState({ purchases: response.data });
             })
     }
+    
     componentDidMount() {
         this.getPurchases();
     }

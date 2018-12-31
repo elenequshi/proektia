@@ -16,6 +16,7 @@ class Navigation extends Component {
     logOut = () => {
         localStorage.removeItem('authorized');
     }
+
     //searches the product when the user types its name
     getSearch = (name) => {
         axios.get('http://localhost:5000/search/' + name)
@@ -23,6 +24,7 @@ class Navigation extends Component {
                 this.setState({ products: response.data })
             })
     }
+
     // get the selected product when the user clicks the search icon
     getProduct = (name) => {
         axios.get('http://localhost:5000/search/product/' + name)
@@ -34,6 +36,7 @@ class Navigation extends Component {
 
             })
     }
+
     // resets the value of the search input field to the empty string after the end of the search
     change = (e) => {
         if (e.target.value !== '') {
@@ -47,6 +50,7 @@ class Navigation extends Component {
         this.getProduct(name);
         e.target.children[0].value = '';
     }
+    
     render() {
         return (
 

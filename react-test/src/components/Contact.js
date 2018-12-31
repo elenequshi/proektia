@@ -18,8 +18,9 @@ class Contact extends Form {
         },
         errors: {},
         animation: false,
-        display:'hide'
+        display: 'hide'
     }
+    
     // validation of the input data
     schema = {
         name: Joi.string()
@@ -36,28 +37,30 @@ class Contact extends Form {
             .required()
             .label("Message")
     }
+
     // add the message sent by the user to the admin in the user's message box
     addMessage = (newMessage) => {
         axios.post('http://localhost:5000/message', newMessage)
     }
+
     // sned the message when the user clicks the submit button
     doSubmit = () => {
         const data = localStorage.getItem('authorized');
         const message = this.state.data.message;
         this.addMessage({ message, data });
-        this.setState({animation:true})
-        setTimeout(() => this.setState({display:"show"}), 500)
+        this.setState({ animation: true })
+        setTimeout(() => this.setState({ display: "show" }), 500)
     }
 
- generateClass = () => {
-    return this.state.animation ? " slide-out-top" : "";
+    generateClass = () => {
+        return this.state.animation ? " slide-out-top" : "";
 
- }
- display = () =>{
-     return this.state.display;
- }
+    }
+    display = () => {
+        return this.state.display;
+    }
 
- 
+
 
     render() {
         return (
@@ -84,10 +87,10 @@ class Contact extends Form {
 						</div>
                         </div>
                     </div>
-                    
-            
-                    <div className = "right--container">
-                    <h2 className={this.display()}>Thanks for feedback!</h2> 
+
+
+                    <div className="right--container">
+                        <h2 className={this.display()}>Thanks for feedback!</h2>
                         <form onSubmit={this.handleSubmit} className={this.generateClass()}>
                             <div className="right--container__item1">
                                 {this.renderInput("name", "Name")}

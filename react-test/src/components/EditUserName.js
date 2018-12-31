@@ -6,7 +6,6 @@ import '../css/form.css';
 
 
 
-
 class EditUserName extends Form {
 
     state = {
@@ -24,6 +23,7 @@ class EditUserName extends Form {
             .label('Username'),
 
     }
+
     // get all the users
     getUsers = () => {
         axios.get('http://localhost:5000/users')
@@ -31,6 +31,7 @@ class EditUserName extends Form {
                 this.setState({ users: response.data });
             })
     }
+
     //admin can edit the username of the individual user 
     editUser = (newUser) => {
         axios.post('http://localhost:5000/admin/edit/username', newUser)

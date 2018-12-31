@@ -4,6 +4,7 @@ import React from 'react';
 import Joi from "joi-browser";
 import Form from "./common/form";
 
+
 class RegistrationForm extends Form {
 
     state = {
@@ -42,6 +43,7 @@ class RegistrationForm extends Form {
             .required()
             .label("Balance")
     }
+
     //function for fetching all the users
     getUsers = () => {
         axios.get('http://localhost:5000/users')

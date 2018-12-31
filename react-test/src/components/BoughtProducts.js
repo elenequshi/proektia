@@ -3,6 +3,7 @@ import axios from 'axios';
 import CartProduct from './common/CartProduct';
 import '../css/cartProducts.css';
 
+
 class BoughtProducts extends Component {
 
     state = {

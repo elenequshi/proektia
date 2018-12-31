@@ -10,6 +10,7 @@ class UserCart extends Component {
         ],
         purchased: true
     }
+
     // gets the cart of the user with its id
     getCart() {
         axios.get('http://localhost:5000/admin/users/cart/' + this.props.match.params.id)
@@ -17,6 +18,7 @@ class UserCart extends Component {
                 this.setState({ cart: response.data });
             })
     }
+    
     componentDidMount() {
         this.getCart();
     }

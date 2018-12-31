@@ -4,6 +4,7 @@ import Form from "./common/form";
 import axios from 'axios';
 import '../css/form.css';
 
+
 class ProductForm extends Form {
 
     state = {
@@ -16,6 +17,7 @@ class ProductForm extends Form {
         products: [],
         errors: {}
     }
+
     // validating the input data
     schema = {
         id: Joi.number(),
@@ -32,6 +34,7 @@ class ProductForm extends Form {
             .required()
             .label("Price")
     }
+
     // fetch all the products from the server
     getProducts() {
 
@@ -40,6 +43,7 @@ class ProductForm extends Form {
                 this.setState({ products: response.data })
             })
     }
+
     // fetch the individual product with its id
     getProduct() {
 
@@ -49,10 +53,12 @@ class ProductForm extends Form {
             })
 
     }
+
     // adding a new product by the admin
     addProduct(newProduct) {
         axios.post('http://localhost:5000/admin/addproduct', newProduct)
     }
+
     // editting the existing product by the admin
     editProduct = (newProduct) => {
         axios.post('http://localhost:5000/admin/products/edit', newProduct)

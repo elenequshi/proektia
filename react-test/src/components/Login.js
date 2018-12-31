@@ -4,6 +4,7 @@ import Joi from "joi-browser";
 import Form from "./common/form";
 import "../css/form.css";
 
+
 class Login extends Form {
 
     state = {
@@ -13,6 +14,7 @@ class Login extends Form {
         },
         errors: {}
     }
+
     // validation of the input data
     schema = {
         _id: Joi.string(),

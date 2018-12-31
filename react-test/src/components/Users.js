@@ -9,6 +9,7 @@ class Users extends Component {
 
         ]
     }
+    
     // get all the users
     getUsers = () => {
         axios.get('http://localhost:5000/users')

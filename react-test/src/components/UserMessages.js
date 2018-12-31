@@ -11,6 +11,7 @@ class UserMessages extends Component {
         ],
         username: ''
     }
+
     //admin  gets the messages sent by user 
     getMessages() {
         axios.get('http://localhost:5000/admin/users/messages/' + this.props.match.params.id)
@@ -18,6 +19,7 @@ class UserMessages extends Component {
                 this.setState({ messages: response.data });
             })
     }
+
     //admin gets the username of the user
     getUserName() {
         axios.get('http://localhost:5000/admin/users/' + this.props.match.params.id)
@@ -25,6 +27,7 @@ class UserMessages extends Component {
                 this.setState({ username: response.data });
             })
     }
+
     componentDidMount() {
         this.getMessages();
         this.getUserName();
